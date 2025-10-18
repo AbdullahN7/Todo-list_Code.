@@ -1,0 +1,36 @@
+TO-DO LIST (JAVA)
+import java.util.*;
+// Making a class of lists
+public class List {
+    public static void main(String[] args) {
+// New object creation
+        Scanner sc = new Scanner(System.in);
+        ArrayList<String> tasks = new ArrayList<>();
+// While loop for unlimited user input until wrong option
+        while (true) {
+// Different options for list management
+            System.out.println("\n1. Add a new Task\n2. Check your Task\n3. Remove your Task\n4. End");
+            int choice = sc.nextInt();
+            sc.nextLine();
+// If user selects ‘1’ then define task 
+            if (choice == 1) {
+                System.out.print("Input your Task: ");
+                String task = sc.nextLine();
+                tasks.add(task);
+// If user selects ‘2’ then tasks available if added before 
+
+            } else if (choice == 2) {
+                System.out.println(tasks.isEmpty() ? "Not available" : tasks);
+// If user selects ‘3’ then remove the task 
+            } else if (choice == 3) {
+                System.out.print("Choose task to delete: ");
+                String task = sc.nextLine();
+                if (tasks.remove(task)) System.out.println("Removed");
+                else System.out.println("Not Found!");
+// If user selects ‘4’ then terminate the program 
+            } else if (choice == 4) {
+                break;
+            }
+        }
+    }
+}
