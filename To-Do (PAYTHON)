@@ -1,0 +1,28 @@
+TO-DO LIST (PYTHON)
+# Array of tasks 
+tasks = []
+# Loop condition for unlimited user input until program ends
+while True:
+    print("\n1. Add your task\n2. Check your task\n3. Delete your task\n4. End")
+    choice = input("Select any option: ")
+# If user selects ‘1’ then define task 
+    if choice == "1":
+        t = input("Define Task: ")
+        tasks.append(t)
+# If user selects 2 then tasks available when added before 
+    elif choice == "2":
+        print("Tasks:", tasks if tasks else "Not available")
+# If user selects ‘3’ then remove the task 
+    elif choice == "3":
+        t = input("Enter task to remove: ")
+        if t in tasks:
+            tasks.remove(t)
+            print("Task removed.")
+# If user has tasks then it will remove; otherwise it will display not found 
+        else:
+            print("Not Found!")
+# If user selects ‘4’ then terminate the program 
+    elif choice == "4":
+        break
+    else:
+        print("Invalid choice")
